@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Abdelhafid BOUSSOUF - Personnage exceptionnel</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    .topnav {
+        overflow: hidden;
+        background-color: #333;
+        font-family: monospace;
+      }
+      
+      .topnav a {
+        display: inline-block;
+        color: #dddcdc;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+      
+      .topnav a:hover {
+        background-color: #a33333;
+        color: rgb(255, 255, 255);
+      }
+      
+      .topnav a.active {
+        background-color: #a33333;
+        color: white;
+      }
+      
+      .topnav .icon {
+        display: none;
+      }
+      
+      li a, .dropbtn {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+      
+      li a:hover, .dropdown:hover .dropbtn {
+        background-color: #a33333;
+      }
+      
+      li.dropdown {
+        display: inline-block;
+      }
+      
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #e0dfdf;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.658);
+        z-index: 1;
+      }
+      
+      .dropdown-content a {
+        color: rgb(34, 34, 34);
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+      }
+      
+      .dropdown-content a:hover {background-color: #a33333;}
+      
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+
+      @media screen and (max-width: 700px) {
+        .topnav a:not(:first-child) {display: none;}
+        .topnav a.icon {
+          float: right;
+          display: block;
+        }
+      }
+      
+      @media screen and (max-width: 700px) {
+        .topnav.responsive {position: relative;}
+        .topnav.responsive .icon {
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+        .topnav.responsive a {
+          float: none;
+          display: block;
+          text-align: left;
+        }
+      }
+/* Police globale */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #d4d4d4;
+  }
+  /* Styles de bannière */
+  .banner {
+  background-color: #818181;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  }
+  .banner img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10%;
+  margin-right: 20px;
+  }
+  .banner h1 {
+  font-size: 36px;
+  margin-left: 30%;
+  font-family: monospace;
+  color: #222222;
+  }
+
+  /* Styles de réalisations */
+  .realisations {
+    margin: 20px 0;
+    opacity: 0; /* Hide the section initially */
+    animation-name: fade-in;
+    animation-duration: 2s;
+    animation-delay: 1s; /* Delay the animation by 1s */
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes fade-in {
+    from {
+      opacity: 0; /* Start with opacity 0 */
+    }
+    to {
+      opacity: 1; /* End with opacity 1 */
+    }
+  }
+  .realisations h2 {
+  font-size: 24px;
+  margin: 0 0 10px;
+  }
+  .realisations ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  }
+  .realisations li {
+  margin-bottom: 10px;
+  font-size: 17px;
+  }
+  .realisations p {
+    font-size: 18px;
+    line-height: 1.5;
+    }
+
+  /* Styles de biographie */
+  .biographie {
+    margin: 20px 0;
+    opacity: 0; /* Hide the section initially */
+    animation-name: fade-in;
+    animation-duration: 1s;
+    animation-delay: 0.5s; /* Delay the animation by 0.5s */
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes fade-in {
+    from {
+      opacity: 0; /* Start with opacity 0 */
+    }
+    to {
+      opacity: 1; /* End with opacity 1 */
+    }
+  }
+  .biographie h2 {
+  font-size: 24px;
+  margin: 0 0 10px;
+  }
+  .biographie h4 {
+    margin: 0 0 10px;
+    }
+  .biographie p {
+  font-size: 18px;
+  line-height: 1.5;
+  }
+
+  /* Styles de médias */
+  .media {
+  margin: 20px 0;
+  
+  }
+  .media h2 {
+  font-size: 24px;
+  margin: 0 0 10px;
+  
+  }
+  .media .images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  }
+  .media .images img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  }
+  .media .videos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-left: 18%;
+  }
+  .media .videos iframe {
+  width: 800px;
+  height: 400px;
+  border-radius: 10px;
+  }
+
+  .description {
+      font-size: 18px;
+      margin: 20px 0;
+      opacity: 0; /* Hide the section initially */
+      animation-name: fade-in;
+      animation-duration: 1s;
+      animation-delay: 0.3s; /* Delay the animation by 0.5s */
+      animation-fill-mode: forwards;
+    }
+
+  /* Styles de footer */
+  footer {
+  text-align: center;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #333;
+  color: #fff;
+  }
+  footer a {
+  color: #fff;
+  }
+
+.contact {
+    padding: 6%;
+    margin-left: 32%;
+    height: 300px;
+    width: 300px;
+}
+</style>
+
+<!-- Import jQuery library -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+  // Wait for the document to be ready
+  $(document).ready(function() {
+    // Get the banner image element
+    var bannerImg = $('.banner img');
+    // Add a click event listener to the banner link
+    $('.banner a').click(function(event) {
+      // Prevent the link from opening the href
+      event.preventDefault();
+      // Add the 'animated' class to the banner
+      bannerImg.parent().addClass('animated');
+      // Remove the 'animated' class after the animation ends
+      setTimeout(function() {
+        bannerImg.parent().removeClass('animated');
+      }, 1000);
+    });
+  });
+</script>
+</head>
+<body>
+    <section>
+        <div class="topnav" id="myTopnav">
+            <a href="#main" class="active">Home</a>
+            <a href="#realisations">Réalisations</a>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Biographie</a>
+                <div class="dropdown-content">
+                  <a href="#bio1">La jeunesse et les débuts politiques</a>
+                  <a href="#bio2">La création du FLN et le rôle de Boussouf</a>
+                  <a href="#bio3">Les négociations de paix avec la France</a>
+                  <a href="#bio4">La carrière politique post-indépendance</a>
+                  <a href="#bio5">L'exil et la mort</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Médias</a>
+                <div class="dropdown-content">
+                  <a href="#img">Photos</a>
+                  <a href="#vid">Vidéos</a>
+                </div>
+            </li>
+            <a href="#contact">Contact</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+              <i class="fa fa-bars"></i>
+            </a>
+          </div>
+          <script>
+          function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+              x.className += " responsive";
+            } else {
+              x.className = "topnav";
+            }
+          }
+          </script>
+      </section>
+  <!-- La section principale -->
+  <section id="main">
+    <!-- La bannière avec le titre et une image -->
+</center>
+    <div class="banner">
+      <h1>Abdelhafid Boussouf</h1>
+        
+      <img src="top.jpg" alt="Abdelhafid Boussouf">
+    </div>
+</center>
+    <script>
+      const bannerImg = document.querySelector('.banner img');
+    
+      // Animate the banner image
+      bannerImg.addEventListener('mouseenter', () => {
+        bannerImg.style.transform = 'rotate(360deg)';
+        bannerImg.style.transition = 'transform 0.5s';
+      });
+    
+      bannerImg.addEventListener('mouseleave', () => {
+        bannerImg.style.transform = 'rotate(0deg)';
+        bannerImg.style.transition = 'transform 0.5s';
+      });
+    </script>
+    <!-- Une courte description -->
+    <center>
+    <p class="description">Abdelhafid Boussouf (en arabe : عبد الحفيظ بوصوف), alias « Si Mabrouk », surnommé aussi « L'Homme de la virgule »</p>
+    </center>
+  </section>
+
+<hr>
+  <section class="biographie">
+    <!-- Une section pour la biographie -->
+    <div id="biographie">
+      <h1><u>Biographie :</u></h1>
+      <h4 id="bio1">La jeunesse et les débuts politiques :</h4>
+      <p>Abdelhafid Boussouf était un militant et combattant algérien pour l'indépendance. Né le 8 avril 1926 à Tébessa en Algérie, il a grandi dans une famille modeste et a commencé à s'engager dans le mouvement nationaliste algérien dès son adolescence.</p>
+      <h4 id="bio2">La création du FLN et le rôle de Boussouf :</h4>
+      <p>Boussouf a rejoint les rangs de l'Armée de libération nationale (ALN) en 1954, au début de la guerre d'indépendance, et a rapidement gravi les échelons grâce à ses compétences militaires et son leadership. Il a été l'un des membres fondateurs du Front de libération nationale (FLN) et a occupé plusieurs postes de haut niveau dans l'organisation, y compris celui de chef d'état-major de l'ALN.</p>
+      <p>Il est devenu l'un des membres fondateurs du FLN et a joué un rôle clé dans la planification de la guerre d'indépendance algérienne.</p>
+      <h4 id="bio3">Les négociations de paix avec la France :</h4>
+      <p>Boussouf a joué un rôle clé dans la planification et la coordination de la guerre d'indépendance algérienne, en particulier en ce qui concerne les opérations militaires et le recrutement de combattants. Il a également été l'un des principaux négociateurs du FLN dans les pourparlers de paix avec la France, qui ont abouti aux accords d'Evian en 1962.</p>
+      <h4 id="bio4">La carrière politique post-indépendance :</h4>
+      <p>Après l'indépendance de l'Algérie, Boussouf a occupé plusieurs postes gouvernementaux importants, notamment celui de ministre de l'Intérieur et de la Défense. Il a également été membre du Comité central du Parti de la révolution algérienne (PRA), qui a remplacé le FLN en tant que parti unique du pays.</p>
+      <h4 id="bio5">L'exil et la mort :</h4>
+      <p>Boussouf a finalement été écarté du pouvoir en 1967 et a été exilé en Union Soviétique jusqu'en 1980, date à laquelle il est rentré en Algérie et est décédé peu de temps après.</p>
+    </div>
+  </section>
+
+  <hr>
+  <section class="realisations">
+    <!-- Une section pour les réalisations -->
+    <div id="realisations">
+      <h1><u>Réalisations :</u></h1>
+      <p>Abdelhafid Boussouf (1926-1990) était un homme politique et révolutionnaire algérien, qui a joué un rôle important dans la guerre d'indépendance algérienne contre la France. Voici quelques-unes de ses réalisations notables :</p>
+      <ol>
+        <li><mark>Co-fondateur du Front de Libération Nationale (FLN) :</mark> Boussouf a participé à la création du FLN en 1954, un mouvement politique et militaire qui a mené la lutte pour l'indépendance de l'Algérie.</li>
+        <li><mark>Organisation de la guerre d'indépendance :</mark> Boussouf a été l'un des principaux organisateurs de la guerre d'indépendance, et a été responsable de la logistique et de la coordination des opérations militaires du FLN.</li>
+        <li><mark>Création du Bureau Politique :</mark> Boussouf a été l'un des membres fondateurs du Bureau Politique du FLN, qui a joué un rôle crucial dans la direction politique et militaire de la guerre d'indépendance.</li>
+        <li><mark>Négociations pour l'indépendance de l'Algérie :</mark> Après la fin de la guerre d'indépendance, Boussouf a participé aux négociations avec le gouvernement français pour l'indépendance de l'Algérie, qui a finalement été obtenue en 1962.</li>
+        <li><mark>Fondateur du Parti de la Révolution Socialiste (PRS) :</mark> Après l'indépendance, Boussouf a fondé le PRS, un parti politique de gauche qui a joué un rôle important dans la politique algérienne des années 1960 et 1970.</li>
+        <li><mark>Membre du Conseil de la Révolution :</mark> Boussouf a été nommé membre du Conseil de la Révolution en 1965, un organe qui a dirigé l'Algérie jusqu'à la constitution de 1976.</li>
+        <li><mark>Responsable de la planification économique :</mark> Boussouf a été responsable de la planification économique de l'Algérie pendant plusieurs années, et a contribué à la mise en place d'une économie socialiste dans le pays.</li>
+    </ul>
+    <p>Ces réalisations montrent l'importance de Boussouf dans la lutte pour l'indépendance de l'Algérie et dans la construction du pays après l'indépendance.</p>
+    </div>
+  </section>
+
+<hr>
+  <section class="media">
+    <!-- Une section pour les images et vidéos -->
+    <div is="media">
+      <h1>Médias :</h1>
+      <h4 id="img">Photos :</h4>
+      <div class="slideshow">
+        <img src="Abdelhafid_Boussouf_-_Si_Mabrouk.jpg" style="height: 200;" width="200">
+        <img src="Boussouf-Mohamed-YazidBenyahia-Meliani-scaled.jpg" style="height: 350;" width="350">
+        <img src="boussouf3.png" style="height: 200;" width="200">
+        <img src="1744608.jpg">
+        <img src="download (1).jpg">
+        <img src="download.jpg">
+        <img src="e4c668f7243a3d6b3056205ea9a13ece.jpg">
+        <img src="images (1).jpg">
+        <img src="images.jpg">
+        <img src="ob_408416_images-17.jpg">
+      </div>
+      <script>
+        var slideIndex = 0;
+        showSlides();
+        
+        function showSlides() {
+          var slides = document.getElementsByClassName("slideshow")[0].getElementsByTagName("img");
+          for (var i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          slideIndex++;
+          if (slideIndex > slides.length) {
+            slideIndex = 1;
+          }
+          slides[slideIndex-1].style.display = "block";
+          setTimeout(showSlides, 7000); // Change image every 7 seconds
+        }
+        </script>
+    <div id="vid">
+        <h4>Vidéos :</h4>
+      <div class="videos">
+        <iframe width="520" height="390" src="https://www.youtube.com/embed/7iIZp7ArkAk" title="VIDÉO TRÈS RARE DE BOUSSOUF  (Déclaration du 25 Juin 1965 )" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </div>
+    </div>
+  </section>
+
+<hr>
+  <section id="contact" class="contact">
+    <form action="#" method="post">
+        <fieldset>
+            <legend>Contact</legend>
+            <input type="text" name="nom_prenom" placeholder="Votre Nom et Prenom">
+            <input type="text" name="email" placeholder="Votre email">
+            <textarea name="coment" cols="30" rows="10" placeholder="Votre Comentaire"></textarea>
+            <input type="submit" value="Envoyer">
+        </fieldset>
+    </form>
+  </section>
+
+  <!-- footer -->
+  <footer>
+    <p>Copyright © 2023 
+    <a href="https://github.com/G0o-o0J" target="_blank">Anis Bendriss</a></p>
+  </footer>
+</body>
+</html>
